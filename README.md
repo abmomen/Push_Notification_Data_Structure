@@ -1,5 +1,5 @@
 #### Push Notification Data Structure
-##### Sending Notifications to a Number of Tokens.
+#### Sending Notifications to registered users Token.
 ##### To send notificaton to a topic Go Admin SDK uses User FCM token
 ```Go
   type MulticastMessage struct {
