@@ -142,3 +142,32 @@ type APNSFCMOptions struct {
 	ImageURL       string `json:"image,omitempty"`
 }
 ```
+```Go 
+type Aps struct {
+	AlertString      string                 `json:"-"`
+	Alert            *ApsAlert              `json:"-"`
+	Badge            *int                   `json:"badge,omitempty"`
+	Sound            string                 `json:"-"`
+	CriticalSound    *CriticalSound         `json:"-"`
+	ContentAvailable bool                   `json:"-"`
+	MutableContent   bool                   `json:"-"`
+	Category         string                 `json:"category,omitempty"`
+	ThreadID         string                 `json:"thread-id,omitempty"`
+	CustomData       map[string]interface{} `json:"-"`
+}
+```
+```Go
+type ApsAlert struct {
+	Title           string   `json:"title,omitempty"` // if specified, overrides the Title field of the Notification type
+	SubTitle        string   `json:"subtitle,omitempty"`
+	Body            string   `json:"body,omitempty"` // if specified, overrides the Body field of the Notification type
+	LocKey          string   `json:"loc-key,omitempty"`
+	LocArgs         []string `json:"loc-args,omitempty"`
+	TitleLocKey     string   `json:"title-loc-key,omitempty"`
+	TitleLocArgs    []string `json:"title-loc-args,omitempty"`
+	SubTitleLocKey  string   `json:"subtitle-loc-key,omitempty"`
+	SubTitleLocArgs []string `json:"subtitle-loc-args,omitempty"`
+	ActionLocKey    string   `json:"action-loc-key,omitempty"`
+	LaunchImage     string   `json:"launch-image,omitempty"`
+}
+```
